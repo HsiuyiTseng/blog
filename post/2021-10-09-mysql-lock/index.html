@@ -3,18 +3,18 @@
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>About me - Hsiuyi's Study Note</title>
-<meta name=description content="Why you'd want to go on a date with me">
+<title>2021 10 09 MySQL Lock 機制 - Hsiuyi's Study Note</title>
+<meta name=description content="測試測試">
 <meta name=author content="Hsiuyi Tseng"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Hsiuyi\u0027s Study Note","url":"https:\/\/hsiuyitseng.github.io\/blog"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/hsiuyitseng.github.io\/blog"}</script>
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/hsiuyitseng.github.io\/blog","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/hsiuyitseng.github.io\/blog\/page\/about\/","name":"About me"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Hsiuyi Tseng"},"headline":"About me","description":"My name is Inigo Montoya. I have the following qualities:\n I rock a great mustache I\u0026rsquo;m extremely loyal to my family  What else do you need?\nmy history To be honest, I\u0026rsquo;m having some trouble remembering right now, so why don\u0026rsquo;t you just watch my movie and it will answer all your questions.","inLanguage":"en","wordCount":53,"datePublished":"0001-01-01T00:00:00","dateModified":"0001-01-01T00:00:00","image":"https:\/\/hsiuyitseng.github.io\/blog\/img\/avatar-icon.jpg","keywords":[""],"mainEntityOfPage":"https:\/\/hsiuyitseng.github.io\/blog\/page\/about\/","publisher":{"@type":"Organization","name":"https:\/\/hsiuyitseng.github.io\/blog","logo":{"@type":"ImageObject","url":"https:\/\/hsiuyitseng.github.io\/blog\/img\/avatar-icon.jpg","height":60,"width":60}}}</script>
-<meta property="og:title" content="About me">
-<meta property="og:description" content="Why you'd want to go on a date with me">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/hsiuyitseng.github.io\/blog","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/hsiuyitseng.github.io\/blog\/post\/2021-10-09-mysql-lock\/","name":"2021 10 09 my SQL lock 機制"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Hsiuyi Tseng"},"headline":"2021 10 09 MySQL Lock 機制","description":"測試測試","inLanguage":"en","wordCount":1,"datePublished":"2021-10-09T22:48:57","dateModified":"2021-10-09T22:48:57","image":"https:\/\/hsiuyitseng.github.io\/blog\/img\/avatar-icon.jpg","keywords":[""],"mainEntityOfPage":"https:\/\/hsiuyitseng.github.io\/blog\/post\/2021-10-09-mysql-lock\/","publisher":{"@type":"Organization","name":"https:\/\/hsiuyitseng.github.io\/blog","logo":{"@type":"ImageObject","url":"https:\/\/hsiuyitseng.github.io\/blog\/img\/avatar-icon.jpg","height":60,"width":60}}}</script>
+<meta property="og:title" content="2021 10 09 MySQL Lock 機制">
+<meta property="og:description" content="測試測試">
 <meta property="og:image" content="https://hsiuyitseng.github.io/blog/img/avatar-icon.jpg">
-<meta property="og:url" content="https://hsiuyitseng.github.io/blog/page/about/">
+<meta property="og:url" content="https://hsiuyitseng.github.io/blog/post/2021-10-09-mysql-lock/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hsiuyi's Study Note">
-<meta name=twitter:title content="About me">
-<meta name=twitter:description content="Why you'd want to go on a date with me">
+<meta name=twitter:title content="2021 10 09 MySQL Lock 機制">
+<meta name=twitter:description content="測試測試">
 <meta name=twitter:image content="https://hsiuyitseng.github.io/blog/img/avatar-icon.jpg">
 <meta name=twitter:card content="summary">
 <link href=https://hsiuyitseng.github.io/blog/img/favicon.ico rel=icon type=image/x-icon>
@@ -101,10 +101,14 @@
 <div class=container>
 <div class=row>
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
-<div class=page-heading>
-<h1>About me</h1>
-<hr class=small>
-<span class=page-subheading>Why you'd want to go on a date with me</span>
+<div class=post-heading>
+<h1>2021 10 09 MySQL Lock 機制</h1>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;Posted on October 9, 2021
+&nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1&nbsp;words
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Hsiuyi Tseng
+</span>
 </div>
 </div>
 </div>
@@ -115,46 +119,39 @@
 <div class=row>
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
 <article role=main class=blog-post>
-<p>My name is Inigo Montoya. I have the following qualities:</p>
-<ul>
-<li>I rock a great mustache</li>
-<li>I&rsquo;m extremely loyal to my family</li>
-</ul>
-<p>What else do you need?</p>
-<h3 id=my-history>my history</h3>
-<p>To be honest, I&rsquo;m having some trouble remembering right now, so why don&rsquo;t you just watch <a href=http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29>my movie</a> and it will answer <strong>all</strong> your questions.</p>
+<p>測試測試</p>
 <hr>
 <section id=social-share>
 <div class="list-inline footer-links">
 <div class=share-box aria-hidden=true>
 <ul class=share>
 <li>
-<a href="//twitter.com/share?url=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpage%2fabout%2f&text=About%20me&via=" target=_blank title="Share on Twitter">
+<a href="//twitter.com/share?url=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpost%2f2021-10-09-mysql-lock%2f&text=2021%2010%2009%20MySQL%20Lock%20%e6%a9%9f%e5%88%b6&via=" target=_blank title="Share on Twitter">
 <i class="fab fa-twitter"></i>
 </a>
 </li>
 <li>
-<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpage%2fabout%2f" target=_blank title="Share on Facebook">
+<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpost%2f2021-10-09-mysql-lock%2f" target=_blank title="Share on Facebook">
 <i class="fab fa-facebook"></i>
 </a>
 </li>
 <li>
-<a href="//reddit.com/submit?url=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpage%2fabout%2f&title=About%20me" target=_blank title="Share on Reddit">
+<a href="//reddit.com/submit?url=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpost%2f2021-10-09-mysql-lock%2f&title=2021%2010%2009%20MySQL%20Lock%20%e6%a9%9f%e5%88%b6" target=_blank title="Share on Reddit">
 <i class="fab fa-reddit"></i>
 </a>
 </li>
 <li>
-<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpage%2fabout%2f&title=About%20me" target=_blank title="Share on LinkedIn">
+<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpost%2f2021-10-09-mysql-lock%2f&title=2021%2010%2009%20MySQL%20Lock%20%e6%a9%9f%e5%88%b6" target=_blank title="Share on LinkedIn">
 <i class="fab fa-linkedin"></i>
 </a>
 </li>
 <li>
-<a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpage%2fabout%2f&title=About%20me" target=_blank title="Share on StumbleUpon">
+<a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpost%2f2021-10-09-mysql-lock%2f&title=2021%2010%2009%20MySQL%20Lock%20%e6%a9%9f%e5%88%b6" target=_blank title="Share on StumbleUpon">
 <i class="fab fa-stumbleupon"></i>
 </a>
 </li>
 <li>
-<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpage%2fabout%2f&description=About%20me" target=_blank title="Share on Pinterest">
+<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fhsiuyitseng.github.io%2fblog%2fpost%2f2021-10-09-mysql-lock%2f&description=2021%2010%2009%20MySQL%20Lock%20%e6%a9%9f%e5%88%b6" target=_blank title="Share on Pinterest">
 <i class="fab fa-pinterest"></i>
 </a>
 </li>
@@ -163,10 +160,10 @@
 </div>
 </section>
 </article>
+<ul class="pager blog-pager">
+</ul>
 </div>
 </div>
-</div>
-<div class=page-meta>
 </div>
 <footer>
 <div class=container>
